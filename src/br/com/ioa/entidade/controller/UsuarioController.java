@@ -86,6 +86,10 @@ public class UsuarioController extends HttpServlet {
 			String senha = request.getParameter("senha");
 			System.out.println(nome);
 			
+			UsuarioDAO usuarioDAO = new UsuarioDAO();
+			
+			String id = request.getParameter("id");
+			Usuario usuario = usuarioDAO.cadastrarUsu(Integer.parseInt(id));
 			
 				
 			if(nome.equals("")&&senha.equals("")) {
