@@ -33,23 +33,6 @@ public class UsuarioDAO {
 
 	}
 	
-	public void cadastrarUsu(Usuario usuario){
-		String sql = "INSERT INTO USUARIO (login, senha) values(?,?)";
-
-		try {
-			PreparedStatement preparador = con.prepareStatement(sql);
-			preparador.setString(1, usuario.getLogin());
-			preparador.setString(2, usuario.getSenha());
-			preparador.execute();
-			preparador.close();
-			System.out.print("Cadastrado com sucesso!! =]=]");
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
-	}
-	
 	public void cadastrarc(Usuario usuario){
 		String sql = "INSERT INTO CONTATO (nome, num, email) values(?,?,?)";
 
@@ -96,6 +79,7 @@ public class UsuarioDAO {
 		}
 	}
 	
+	
 	public void alterarc(Usuario usuario){
 		String sql = "UPDATE CONTATO SET nome=?, num=?, email=? WHERE id=?";
 
@@ -108,19 +92,11 @@ public class UsuarioDAO {
 			preparador.execute();
 			preparador.close();
 			System.out.print("Alterado com sucesso!! =]=]");
-
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 
-	}
-	
-	public void salvarc (Usuario usuario) {
-		if (usuario.getId()!=null && usuario.getId()!=0) {
-			alterarc(usuario);
-		}else {
-			cadastrarc(usuario);
-		}
 	}
 	
 		

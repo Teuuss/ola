@@ -11,12 +11,12 @@ body{
   background: #00577F;
 }
 div{
-  background: silver;
   text-align: center;
-  padding: 2%;
-  background: #f2af00;
-  font-family: sans-serif;
-  color: white;
+    padding: 1%;
+    background: #f2af00;
+    font-family: fantasy;
+    font-size: 200%;
+    color: white;
 }
 form{
   margin-top: 15%;
@@ -33,24 +33,64 @@ form{
   color: black;
   width:100%;
 }
+#form2 #a{
+  border: none;
+  background: none;
+  color: black;
+  width:100%;
+  text-align: justify;
+}
 #b{
   text-align: center;
   background: none;
 }
+#form2 #b{
+    text-align: center;
+    background: none;
+    float: right;
+}
 hr{
   margin-top: 0%;
+}
+#form2 p{
+margin-bottom: -1%;
+}
+#form1{
+
+}
+#form2{
+display:none;
+}
+p{
+margin-bottom: -1%;
 }
 #a:focus{outline:none;}
 </style>
 <body>
   <div>Agenda Telefonica</div>
 <center>
-<form action="user.do?acao=mostrar" method="post">
+<form id="form1" action="user.do" method="post">
 <input type="text" placeholder="Login" name="login" id="a"/><hr><br>
 
 <input type="password" placeholder="Senha" id="a" name="senha"/><hr>
 <input type="submit" id="b" value="Entrar">
-</center>
+<p>Cadastre-se clicando <a style="color:#00577F;"onclick="a()">aqui!</a></p>
 </form>
+
+
+<form id="form2" action="user.do?acao=cad" method="post">
+<input type="text" placeholder="Nome" name="nome" id="a"/><hr><br>
+<input type="text" placeholder="Login" name="login" id="a"/><hr><br>
+<input type="text" placeholder="Senha" name="senha" id="a"/><hr><br>
+<input type="submit" id="b" value="Entrar"><br>
+	</form>
+</center>
+
+<script type="text/javascript">
+function a(){
+	document.getElementById("form1").style.display = "none";
+	document.getElementById("form2").style.display = "block";
+}
+</script>
 </body>
 </html>

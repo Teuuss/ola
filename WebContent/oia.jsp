@@ -10,12 +10,12 @@
 </head>
 <style>
 div{
-  background: silver;
   text-align: center;
-  padding: 1%;
-  background: #f2af00;
-  font-family: sans-serif;
-  color: white;
+    padding: 1%;
+    background: #f2af00;
+    font-family: fantasy;
+    font-size: 200%;
+    color: white;
 }
 body{
   border: 0%;
@@ -30,6 +30,7 @@ table{
   font-family: sans-serif;
   border: solid white 1px;
   color: white;
+  box-shadow: 5px 10px 20px #2f2f2f;
 }
 form{
 margin-top:5%;
@@ -51,6 +52,10 @@ background: #00577F;
 border:none;
 padding: 1%;
 color: white;
+font-family: monospace;
+}
+.botao:hover{
+    box-shadow: 2px 2px 10px 0px #293d46;
 }
 .botaox{
 	background: #f2af00;
@@ -77,7 +82,7 @@ input:focus{outline:none;}
 
 #b{
 display:none;
-box-shadow: 0px 1px 20px #888888;
+box-shadow: 0px 1px 20px #2f2f2f;
 }
 input{
   text-align: center;
@@ -142,7 +147,7 @@ for(Usuario u: lista) {
 
 </table>
 
-<form id="b" action="user.do" method="post">
+<form id="b" action="user.do?acao=cadc" method="post">
 	<a onclick="c()" class="botaoxa">x</a>
 	<input type="text" placeholder="Nome" name="nome"/><hr><br>
 	<input type="tell" placeholder="Telefone" name="num"/><hr><br>

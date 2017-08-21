@@ -95,7 +95,7 @@ Usuario usuario = (Usuario) request.getAttribute("usuario");
 String oia = usuario.getNome();
 %>
 <center>
-	<form action="user.do" method="post">
+	<form action="user.do?acao=altc" method="post">
 	<a href="user.do?acao=lis" class="botaoxa">x</a><br><br>
 	<labe>Nome: </labe>
 	<input type="text" value="<%= usuario.getNome()%>" name="nome"/><br>
@@ -103,6 +103,8 @@ String oia = usuario.getNome();
 	<input type="text" value="<%= usuario.getNum()%>" name="num"/><br>
 	<labe>Email: </labe>
 	<input type="text" value="<%= usuario.getEmail()%>" name="email"/><br>
+	<labe>Id: </labe>
+	<input type="text" value="<%= usuario.getId()%>" name="id"/><br>
 	<input type="submit" value="Salvar" class="bor"/>
 	</form>
 	</center>

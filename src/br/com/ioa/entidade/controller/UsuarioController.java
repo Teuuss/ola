@@ -81,18 +81,64 @@ public class UsuarioController extends HttpServlet {
 		
 		String acao = request.getParameter("acao");
 		
+		if(acao!=null && acao.equals("cadc")) {
+		String nome = request.getParameter("nome");
+		String num = request.getParameter("num");
+		String email = request.getParameter("email");
+		
+		Usuario usuario = new Usuario();
+		usuario.setNome(nome);
+		usuario.setNum(num);
+		usuario.setEmail(email);
+		
+		UsuarioDAO usuarioDAO = new UsuarioDAO();
+		usuarioDAO.cadastrarc(usuario);
+		response.sendRedirect("user.do?acao=lis");
+		}
+		if(acao!=null && acao.equals("cad")) {
+			String nome = request.getParameter("nome");
+			String login = request.getParameter("login");
+			String senha = request.getParameter("senha");
+			
+			Usuario usuario = new Usuario();
+			usuario.setNome(nome);
+			usuario.setLogin(login);
+			usuario.setSenha(senha);
+			
+			UsuarioDAO usuarioDAO = new UsuarioDAO();
+			usuarioDAO.cadastrar(usuario);
+			response.sendRedirect("index.html");
+			}
+		
+		
+		if(acao!=null && acao.equals("altc")) {
+			String nome = request.getParameter("nome");
+			String num = request.getParameter("num");
+			String email = request.getParameter("email");
+			String id = request.getParameter("id");
+			
+			Usuario usuario = new Usuario();
+			usuario.setNome(nome);
+			usuario.setNum(num);
+			usuario.setEmail(email);
+			usuario.setId(Integer.parseInt(id));
+			
+			UsuarioDAO usuarioDAO = new UsuarioDAO();
+			usuarioDAO.alterarc(usuario);
+			response.sendRedirect("user.do?acao=lis");
+			}
+		
+		
 		if(acao!=null && acao.equals("mostrar")) {
 			String nome = request.getParameter("login");
 			String senha = request.getParameter("senha");
 			System.out.println(nome);
 			
-			UsuarioDAO usuarioDAO = new UsuarioDAO();
-			
-			String id = request.getParameter("id");
-			Usuario usuario = usuarioDAO.cadastrarUsu(Integer.parseInt(id));
-			
+			Usuario usuario = new Usuario();
+			String oi = usuario.getNome();
+			String oi2 = usuario.getSenha();
 				
-			if(nome.equals("")&&senha.equals("")) {
+			if(nome.equals("usuarioDAO")&&senha.equals("usuarioDAO")) {
 				System.out.println("Autenticado =]=]");
 				response.sendRedirect("user.do?acao=lis");
 			}else {
