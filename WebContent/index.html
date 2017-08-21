@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Lista Telefonica</title>
+</head>
+<style>
+body{
+  border: 0%;
+  margin: 0%;
+  background: #00577F;
+}
+div{
+  background: silver;
+  text-align: center;
+  padding: 2%;
+  background: #f2af00;
+  font-family: sans-serif;
+  color: white;
+}
+form{
+  margin-top: 15%;
+  border: solid white 1px;
+  width: 250px;
+  padding: 1%;
+  box-shadow: 0px 1px 20px #888888;
+  background: white;
+}
+#a{
+  text-align: center;
+  border: none;
+  background: none;
+  color: black;
+  width:100%;
+}
+#b{
+  text-align: center;
+  background: none;
+}
+hr{
+  margin-top: 0%;
+}
+#a:focus{outline:none;}
+</style>
+<body>
+  <div>Agenda Telefonica</div>
+<center>
+<form action="user.do?acao=mostrar" method="post">
+<input type="text" placeholder="Login" name="login" id="a"/><hr><br>
+
+<input type="password" placeholder="Senha" id="a" name="senha"/><hr>
+<input type="submit" id="b" value="Entrar">
+</center>
+</form>
+</body>
+</html>
